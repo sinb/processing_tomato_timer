@@ -43,10 +43,10 @@ void draw()
     int secs = Math.abs(work_time) % 60;
     text(mins + " : " + secs + "\n", width/2, height/2-40);    
   }
-  else // back to zero
+  else // back to start
   {
     background(137, 218, 255);
-    work_time = 5;
+    work_time = 2700;
     player_work.close();
     player_rest.close();
     player_rest = minim.loadFile("alert.wav"); 
