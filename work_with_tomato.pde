@@ -9,7 +9,7 @@ int work_time = 2700; // seconds
 int rest_time = 300;
 void setup()
 {
-  size(320, 320);
+  size(240, 120);
   background(137, 218, 255);
   frameRate(1);
   minim = new Minim(this);
@@ -29,8 +29,8 @@ void draw()
     fill(0, 102, 153);  
     textAlign(CENTER);
     textSize(32);
-    text("WORK WORK\n", width/2, height/2);
-    text(mins + " : " + secs + "\n", width/2, height/2-40);    
+    text("WORK WORK\n", width/2, height/2+30);
+    text(mins + " : " + secs + "\n", width/2, height/2-20);    
   }
 
   else if (work_time > -rest_time) 
@@ -38,10 +38,12 @@ void draw()
 
     background(137, 218, 255);
     player_rest.play();
-    text("GO EAT A TOMATO!", width/2, height/2); 
+    textSize(24);
+    text("GO EAT A TOMATO!", width/2, height/2+30); 
     int mins = (int)Math.floor((Math.abs(--work_time)) / 60);
     int secs = Math.abs(work_time) % 60;
-    text(mins + " : " + secs + "\n", width/2, height/2-40);    
+    textSize(32);
+    text(mins + " : " + secs + "\n", width/2, height/2-20);    
   }
   else // back to start
   {
